@@ -5,4 +5,7 @@ plugins {
     alias(libs.plugins.kotlin.compose) apply false
 }
 
-layout.buildDirectory.set(file("C:/Users/Atta/.gradle-builds/anydrop/root"))
+// Folder build khusus di PC Windows pemilik; di Linux/CI memakai folder bawaan.
+if (System.getProperty("os.name").startsWith("Windows", ignoreCase = true)) {
+    layout.buildDirectory.set(file("C:/Users/Atta/.gradle-builds/anydrop/root"))
+}
