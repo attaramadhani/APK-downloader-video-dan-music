@@ -4,7 +4,11 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 }
 
-layout.buildDirectory.set(file("C:/Users/Atta/.gradle-builds/anydrop/app"))
+// Folder build khusus di PC Windows pemilik (di luar OneDrive agar tidak lambat/terkunci).
+// Di Linux/CI (GitHub Actions) memakai folder build bawaan.
+if (System.getProperty("os.name").startsWith("Windows", ignoreCase = true)) {
+    layout.buildDirectory.set(file("C:/Users/Atta/.gradle-builds/anydrop/app"))
+}
 
 android {
     namespace = "com.downloader.allinone"
