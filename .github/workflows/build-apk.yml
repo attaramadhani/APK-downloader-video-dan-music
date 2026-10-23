@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Set up JDK 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: '17'
@@ -25,7 +25,17 @@ jobs:
           gradle-version: '8.10.2'
 
       - name: Build debug & release APK
-        run: gradle assembleDebug assembleRelease --stacktrace --no-daemon
+        shell: bash
+        run: |
+          set +e
+          gradle assembleDebug assembleRelease --no-daemon --console=plain 2>&1 | tee build.log
+          status=${PIPESTATUS[0]}
+          if [ $status -ne 0 ]; then
+            # Ringkas error compile/gradle menjadi satu anotasi agar mudah dibaca
+            msg=$(grep -E "^e: |^> |What went wrong|Could not|error:|Unresolved|FAILURE" -A2 build.log | head -c 15000 | sed ':a;N;$!ba;s/%/%25/g;s/\r/%0D/g;s/\n/%0A/g')
+            echo "::error title=Build gagal::$msg"
+          fi
+          exit $status
 
       - name: Upload APK
         if: success()
