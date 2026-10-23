@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Konfigurasi Dasar: Wajibkan HTTPS dan tolak Cleartext HTTP tanpa izin -->
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+
+    <!-- Pengecualian hanya untuk domain CDN streaming media yang masih menggunakan HTTP warisan -->
+    <domain-config cleartextTrafficPermitted="true">
+        <!-- Izinkan streaming media dari CDN publik umum -->
+        <domain includeSubdomains="true">googlevideo.com</domain>
+        <domain includeSubdomains="true">twimg.com</domain>
+        <domain includeSubdomains="true">tiktokcdn.com</domain>
+        <domain includeSubdomains="true">fbcdn.net</domain>
+        <domain includeSubdomains="true">cdninstagram.com</domain>
+    </domain-config>
+</network-security-config>

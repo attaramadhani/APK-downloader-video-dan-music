@@ -1,0 +1,13 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="#6366F1"
+        android:pathData="M0,0h108v108h-108z" />
+    <!-- Download Arrow Icon -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,28c-1.66,0 -3,1.34 -3,3v22h-6c-1.78,0 -2.67,2.15 -1.41,3.41l9.59,9.59c0.78,0.78 2.05,0.78 2.83,0l9.59,-9.59c1.26,-1.26 0.37,-3.41 -1.41,-3.41h-6V31C58,29.34 56.66,28 54,28zM32,72c0,1.66 1.34,3 3,3h38c1.66,0 3,-1.34 3,-3s-1.34,-3 -3,-3H35C33.34,69 32,70.34 32,72z" />
+</vector>

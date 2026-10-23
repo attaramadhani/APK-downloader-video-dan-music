@@ -1,0 +1,20 @@
+# Gradle / Android Studio
+.gradle/
+.kotlin/
+build/
+app/build/
+.idea/
+*.iml
+local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+
+# File kunci / rahasia
+*.jks
+*.keystore
+
+# Folder kerja lokal
+scratch/
+_backup_sebelum_perbaikan/
+_upload_github.tgz

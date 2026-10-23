@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">AnyDrop</string>
+    <string name="app_subtitle">Universal Video &amp; Music Downloader</string>
+    <string name="supported_badge">1.000+ Situs Didukung</string>
+    <string name="input_hint">Tempel link video atau musik di sini…</string>
+    <string name="paste_button">Tempel</string>
+    <string name="clear_button">Hapus</string>
+    <string name="fetch_media">Ambil Info Media</string>
+    <string name="download_button">Download Sekarang</string>
+    <string name="choose_format">Pilih Format &amp; Kualitas</string>
+    <string name="active_downloads">Daftar Unduhan</string>
+    <string name="no_downloads">Belum ada file yang diunduh</string>
+</resources>
